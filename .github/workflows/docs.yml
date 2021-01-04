@@ -24,8 +24,7 @@ jobs:
           pip install tox virtualenv
       - name: Build docs
         run: |
-          cd docs
-          make docs
+          tox -e docs
 
 #      - uses: ammaraskar/sphinx-action@master
 #        with:
