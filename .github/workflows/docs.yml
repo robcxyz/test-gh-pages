@@ -22,6 +22,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install tox virtualenv
+
       - name: Build docs
         run: |
           tox -e docs
@@ -39,16 +40,17 @@ jobs:
 
       - name: Commit documentation changes
         run: |
-          git clone https://github.com/ammaraskar/sphinx-action-test.git --branch docs --single-branch docs
-          shopt -s @(docs/_build/html)
-          cp -r docs/_build/html/* docs/
-          cd docs
+          git clone https://github.com/robcxyz/test-gh-pages.git --branch docs --single-branch docs-gh
+          shopt -s @(docs-gh)
+          cp -r docs/_build/html/* docs-gh/
+          cd docs-gh
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add .
           git commit -m "Update documentation" -a || true
           # The above command will fail if no changes were present, so we ignore
           # the return code.
+
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
