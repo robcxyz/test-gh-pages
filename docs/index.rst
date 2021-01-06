@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Nukikata: Cookiecutter Fork
+Tackle Box
 ======================================
 
 Cookiecutter creates projects from project templates, e.g. Python package projects.
