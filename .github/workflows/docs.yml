@@ -54,7 +54,7 @@ jobs:
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
-          branch: gh-pages
+          branch: docs
           directory: gh-pages
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
